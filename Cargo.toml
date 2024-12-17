@@ -1,0 +1,49 @@
+[package]
+name = "libaleominer"
+version = "0.1.0"
+edition = "2021"
+
+
+# [dependencies.snarkvm]
+# git = "https://github.com/AleoNet/snarkVM.git"
+# rev = "d170a9f"
+# features = [ "circuit", "console", "rocks"  ]
+
+[dependencies.snarkvm]
+path =  "../snarkVM-miner"
+version = "=0.16.19"
+features = [ "timer" ]
+
+[dependencies.ledger-puzzle-epoch]
+package = "snarkvm-ledger-puzzle-epoch"
+path = "../snarkVM-miner/ledger/puzzle/epoch"
+version = "=0.16.19"
+features = [ "synthesis" ]
+
+[dependencies.console_program]
+package = "snarkvm-console-program"
+path = "../snarkVM-miner/console/program"
+version = "=0.16.19"
+
+
+
+[dependencies.rand]
+version = "0.8"
+
+
+[dependencies.rand_chacha]
+version = "0.3.1"
+
+[dependencies.sha2]
+version = "0.10"
+default-features = false
+
+[build-dependencies.cc]
+version = "^1.0.83"
+
+[build-dependencies.which]
+version = "^4.4"
+
+[dependencies.tiny-keccak]
+version = "2"
+features = [ "keccak", "sha3" ]

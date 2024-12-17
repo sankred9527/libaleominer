@@ -1,0 +1,154 @@
+program puzzle.aleo;
+
+function synthesize:
+
+    input r0 as boolean.public;
+    input r1 as boolean.public;
+    input r2 as i8.public;
+    input r3 as i8.public;
+    input r4 as i16.public;
+    input r5 as i16.public;
+    input r6 as i32.public;
+    input r7 as i32.public;
+    input r8 as i64.public;
+    input r9 as i64.public;
+    input r10 as i128.public;
+    input r11 as i128.public;
+    input r12 as field.public;
+    input r13 as field.public;
+
+    is.eq r1 r0 into r14;
+    is.eq r3 r2 into r15;
+    is.eq r5 r4 into r16;
+    is.eq r7 r6 into r17;
+    is.eq r9 r8 into r18;
+    is.eq r11 r10 into r19;
+
+    hash.psd2 r12 into r20 as u8;
+    hash.psd2 r13 into r21 as u8;
+
+    hash.psd2 r12 into r22 as u16;
+    hash.psd2 r13 into r23 as u16;
+
+    hash.psd2 r12 into r24 as u32;
+    hash.psd2 r13 into r25 as u32;
+
+    hash.psd2 r12 into r26 as u64;
+    hash.psd2 r13 into r27 as u64;
+
+    hash.psd2 r12 into r28 as u128;
+    hash.psd2 r13 into r29 as u128;
+
+    mul.w r3 r2 into r30;
+    mul.w r5 r4 into r31;
+    mul.w r7 r6 into r32;
+    mul.w r9 r8 into r33;
+    mul.w r11 r10 into r34;
+
+    ternary r15 r30 r2 into r35;
+    ternary r16 r31 r4 into r36;
+    ternary r17 r32 r6 into r37;
+    ternary r18 r33 r8 into r38;
+    ternary r19 r34 r10 into r39;
+
+    xor r36 r5 into r40;
+    square r12 into r41;
+    add.w r39 r11 into r42;
+    xor r23 r22 into r43;
+    square r13 into r44;
+    add r44 r41 into r45;
+    shr.w r40 r25 into r46;
+    add.w r27 r26 into r47;
+    shl.w r47 r25 into r48;
+    lte r38 r9 into r49;
+    sub.w r29 r28 into r50;
+    lt r40 r36 into r51;
+    lte r40 r36 into r52;
+    square r44 into r53;
+    is.eq r38 -9223372036854775808i64 into r54;
+    add.w r38 1i64 into r55;
+    ternary r54 r55 r38 into r56;
+    neg r56 into r57;
+    square r45 into r58;
+    shl.w r43 r25 into r59;
+    add.w r38 r9 into r60;
+    xor r37 r7 into r61;
+    gt r50 r29 into r62;
+    add.w r25 r24 into r63;
+    lte r61 r37 into r64;
+    xor r50 r29 into r65;
+    add.w r63 r25 into r66;
+    add.w r66 r63 into r67;
+    xor r40 r36 into r68;
+    lte r61 r37 into r69;
+    lt r47 r27 into r70;
+    lt r65 r50 into r71;
+    shl.w r65 r43 into r72;
+    is.eq r60 -9223372036854775808i64 into r73;
+    add.w r60 1i64 into r74;
+    ternary r73 r74 r60 into r75;
+    neg r75 into r76;
+    lt r68 r40 into r77;
+    square r53 into r78;
+    add.w r68 r40 into r79;
+    lte r65 r50 into r80;
+    add.w r42 r39 into r81;
+    and r61 r37 into r82;
+    mul r78 r58 into r83;
+    cast.lossy r83 into r84 as u16;
+    is.eq r60 -9223372036854775808i64 into r85;
+    add.w r60 1i64 into r86;
+    ternary r85 r86 r60 into r87;
+    neg r87 into r88;
+    square r78 into r89;
+    square r83 into r90;
+    shl.w r67 r21 into r91;
+    xor r47 r27 into r92;
+    shl.w r67 r84 into r93;
+    is.eq r79 -32768i16 into r94;
+    add.w r79 1i16 into r95;
+    ternary r94 r95 r79 into r96;
+    neg r96 into r97;
+    add r90 r89 into r98;
+    add.w r60 r38 into r99;
+    sub.w r67 r66 into r100;
+    shl.w r99 r21 into r101;
+    shr.w r92 r21 into r102;
+    add r98 r90 into r103;
+    xor r92 r47 into r104;
+    or r104 1u64 into r105;
+    mod r92 r105 into r106;
+    mul r103 r98 into r107;
+    xor r81 r42 into r108;
+    mul.w r100 r67 into r109;
+    mul r107 r103 into r110;
+    mul r110 r107 into r111;
+    cast.lossy r111 into r112 as i64;
+    xor r109 r100 into r113;
+    xor r108 r81 into r114;
+    xor r113 r109 into r115;
+    shl.w r84 r21 into r116;
+    not r35 into r117;
+    gte r84 r43 into r118;
+    lt r84 r43 into r119;
+    xor r79 r68 into r120;
+    sub.w r65 r50 into r121;
+    gt r121 r65 into r122;
+    xor r61 r37 into r123;
+    is.eq r112 -9223372036854775808i64 into r124;
+    add.w r112 1i64 into r125;
+    ternary r124 r125 r112 into r126;
+    neg r126 into r127;
+    is.eq r112 -9223372036854775808i64 into r128;
+    add.w r112 1i64 into r129;
+    ternary r128 r129 r112 into r130;
+    neg r130 into r131;
+    square r110 into r132;
+    sub.w r115 r113 into r133;
+    mul.w r84 r43 into r134;
+    is.eq r123 -2147483648i32 into r135;
+    add.w r123 1i32 into r136;
+    ternary r135 r136 r123 into r137;
+    neg r137 into r138;
+
+

@@ -1,0 +1,155 @@
+program puzzle.aleo;
+
+function synthesize:
+
+    input r0 as boolean.public;
+    input r1 as boolean.public;
+    input r2 as i8.public;
+    input r3 as i8.public;
+    input r4 as i16.public;
+    input r5 as i16.public;
+    input r6 as i32.public;
+    input r7 as i32.public;
+    input r8 as i64.public;
+    input r9 as i64.public;
+    input r10 as i128.public;
+    input r11 as i128.public;
+    input r12 as field.public;
+    input r13 as field.public;
+
+    is.eq r1 r0 into r14;
+    is.eq r3 r2 into r15;
+    is.eq r5 r4 into r16;
+    is.eq r7 r6 into r17;
+    is.eq r9 r8 into r18;
+    is.eq r11 r10 into r19;
+
+    hash.psd2 r12 into r20 as u8;
+    hash.psd2 r13 into r21 as u8;
+
+    hash.psd2 r12 into r22 as u16;
+    hash.psd2 r13 into r23 as u16;
+
+    hash.psd2 r12 into r24 as u32;
+    hash.psd2 r13 into r25 as u32;
+
+    hash.psd2 r12 into r26 as u64;
+    hash.psd2 r13 into r27 as u64;
+
+    hash.psd2 r12 into r28 as u128;
+    hash.psd2 r13 into r29 as u128;
+
+    mul.w r3 r2 into r30;
+    mul.w r5 r4 into r31;
+    mul.w r7 r6 into r32;
+    mul.w r9 r8 into r33;
+    mul.w r11 r10 into r34;
+
+    ternary r15 r30 r2 into r35;
+    ternary r16 r31 r4 into r36;
+    ternary r17 r32 r6 into r37;
+    ternary r18 r33 r8 into r38;
+    ternary r19 r34 r10 into r39;
+
+    mul r13 r12 into r40;
+    add r40 r13 into r41;
+    lt r25 r24 into r42;
+    xor r29 r28 into r43;
+    abs.w r39 into r44;
+    xor r37 r7 into r45;
+    is.eq r40 0field into r46;
+    ternary r46 r12 r40 into r47;
+    add.w r43 r29 into r48;
+    add.w r39 r11 into r49;
+    xor r38 r9 into r50;
+    mul.w r50 r38 into r51;
+    mul r47 r41 into r52;
+    cast.lossy r52 into r53 as i128;
+    add.w r25 r24 into r54;
+    add.w r23 r22 into r55;
+    mul.w r54 r25 into r56;
+    mul r52 r47 into r57;
+    cast.lossy r57 into r58 as u8;
+    add.w r45 r37 into r59;
+    lte r48 r43 into r60;
+    shr.w r59 r56 into r61;
+    sub.w r59 r45 into r62;
+    shr.w r27 r55 into r63;
+    mul r57 r52 into r64;
+    cast.lossy r64 into r65 as u32;
+    mul r64 r57 into r66;
+    add.w r53 r49 into r67;
+    gt r65 r56 into r68;
+    add.w r27 r26 into r69;
+    gte r36 r5 into r70;
+    is.eq r67 -170141183460469231731687303715884105728i128 into r71;
+    add.w r67 1i128 into r72;
+    ternary r71 r72 r67 into r73;
+    neg r73 into r74;
+    ternary r71 r36 r5 into r75;
+    square r64 into r76;
+    mul r76 r66 into r77;
+    cast.lossy r77 into r78 as u128;
+    square r76 into r79;
+    is.eq r67 -170141183460469231731687303715884105728i128 into r80;
+    add.w r67 1i128 into r81;
+    ternary r80 r81 r67 into r82;
+    neg r82 into r83;
+    add.w r62 r59 into r84;
+    lt r51 r50 into r85;
+    gt r65 r56 into r86;
+    mul r79 r77 into r87;
+    cast.lossy r87 into r88 as i64;
+    add.w r36 r5 into r89;
+    add.w r67 r53 into r90;
+    xor r55 r23 into r91;
+    ternary r86 r65 r56 into r92;
+    mul r87 r79 into r93;
+    gte r91 r55 into r94;
+    sub.w r78 r48 into r95;
+    xor r91 r55 into r96;
+    is.eq r87 0field into r97;
+    ternary r97 r12 r87 into r98;
+    shr.w r69 r58 into r99;
+    xor r89 r36 into r100;
+    add.w r96 r91 into r101;
+    and r84 r62 into r102;
+    gte r98 r93 into r103;
+    xor r90 r67 into r104;
+    is.eq r88 -9223372036854775808i64 into r105;
+    add.w r88 1i64 into r106;
+    ternary r105 r106 r88 into r107;
+    neg r107 into r108;
+    lte r88 r51 into r109;
+    mul.w r101 r96 into r110;
+    xor r69 r27 into r111;
+    xor r95 r78 into r112;
+    lt r65 r56 into r113;
+    and r104 r90 into r114;
+    add.w r84 r62 into r115;
+    gt r98 r93 into r116;
+    xor r115 r84 into r117;
+    is.eq r88 -9223372036854775808i64 into r118;
+    add.w r88 1i64 into r119;
+    ternary r118 r119 r88 into r120;
+    neg r120 into r121;
+    xor r104 r90 into r122;
+    add.w r65 r56 into r123;
+    lte r98 r93 into r124;
+    pow.w r123 r65 into r125;
+    add.w r123 r65 into r126;
+    square r93 into r127;
+    gte r100 r89 into r128;
+    mul r127 r98 into r129;
+    cast.lossy r129 into r130 as i32;
+    mul r129 r127 into r131;
+    cast.lossy r131 into r132 as u8;
+    xor r100 r89 into r133;
+    lte r110 r101 into r134;
+    shl.w r122 r110 into r135;
+    is.eq r133 -32768i16 into r136;
+    add.w r133 1i16 into r137;
+    ternary r136 r137 r133 into r138;
+    neg r138 into r139;
+
+
