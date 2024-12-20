@@ -1,4 +1,0 @@
-
-
-
-cmake .. -DENABLE_TEST=1  -DMINER_CUDA_ARCH=75
